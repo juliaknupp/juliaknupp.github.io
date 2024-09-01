@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa montadorr</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    /*
+laranja: rgb(246,94,0);
+cinza-azulado: rgb(13,31,41);
+azul-escuro: rgb(1, 17, 23);
+*/
+
+* {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing:border-box;
+}
+html {
+    margin:0;
+}
+
+.top mark {
+    color: rgb(246,94,0);
+    text-transform: lowercase;
+    background-color: rgb(255,255,255);
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+}
+
+section, .divisoria nav {
+    width:900px;
+    margin: auto;
+}
+
+.top figure {
+    position:relative;
+    width:500px;
+}
+
+.top article {
+    width: 300px;  
+}
+
+.top figcaption {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background: rgb(13,31,41);
+    color: rgb(246,94,0);
+    padding: 5px;
+    font-size: 0.7em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.phone {
+    color: #fff;    
+}
+.divisoria {
+    width: 100%;
+    background: rgb(13,31,41);
+}
+
+.divisoria ul {
+    display: flex;
+    flex-direction:row;
+    padding-left: 0;
+    list-style: none;
+}
+.divisoria li {
+    padding:10px 20px; 
+}
+.divisoria li:first-child, .divisoria li:hover {
+    background-color: rgb(246,94,0);
+    
+}
+
+.divisoria a {
+    text-decoration: none;  
+    color: #fff;
+}
+
+main section {
+    display: flex;
+    flex-direction: row;
+}
+
+.box {
+    width: 270px;
+}
+
+.box figure {
+    width: 100%;
+    margin-left: 0;
+    position: relative;
+}
+
+.box figcaption{
+    position:absolute;
+    bottom:-5px;
+    width:100%;
+    padding:5px 5px 15px;
+    text-align: center;
+    background: rgba(0,0,0,0.8); 
+    color: #fff;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 55% 75%, 50% 100%, 45% 75%, 0% 75%);
+}
+
+.box img {
+    width:inherit;
+}
+
+.box p {
+    font-size:0.8em;   
+}
+</style>
+</head>
+<body>
+    <header>
+        <section class="top">
+            <article>
+                <h2>Empresa de <mark>Mudanças</mark></h2>
+                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sollicitudin eros id felis laoreet sagittis. Aenean faucibus dui id lorem tincidunt dignissim. Nullam quis justo id nulla bibendum posuere sit amet quis quam. Donec in tempor leo. Nulla eleifend quis libero sagittis sagittis. Duis blandit venenatis metus, id ornare risus consequat a. Vivamus commodo interdum tellus, eu tristique ante sollicitudin vel. Sed non tellus velit. </p>
+            </article>
+            <figure>
+                <img src="./img/entregador_site4.png" alt="Entregador da Empresa XPTO">
+                <figcaption>Ligue já:<span class="phone">0800-000-0000</span></figcaption>
+            </figure>
+        </section>
+        <section class="divisoria">
+            <nav>
+                <ul>
+                    <li><a href="#">Página inicial</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Caminhões e equipe</a></li>
+                    <li><a href="#">Dicas de mudança</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+<nav>
+        <ul>
+            <li><a href="#">Página inicial</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Caminhões e equipes</a></li>
+            <li><a href="#">Dicas de mudança</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="services">
+            <div class="service-item">
+                <img src="residential.jpg" alt="Residential Movers">
+                <h2>Residential Movers</h2>
+                <p>Sou um parágrafo. Clique aqui para me editar e adicionar seu texto...</p>
+                <a href="#" class="btn">Leia Mais</a>
+            </div>
+            <div class="service-item">
+                <img src="commercial.jpg" alt="Commercial Movers">
+                <h2>Commercial Movers</h2>
+                <p>Sou um parágrafo. Clique aqui para me editar e adicionar seu texto...</p>
+                <a href="#" class="btn">Leia Mais</a>
+            </div>
+            <div class="service-item">
+                <img src="specials.jpg" alt="Specials">
+                <h2>Specials</h2>
+                <p>Sou um parágrafo. Clique aqui para me editar e adicionar seu texto...</p>
+                <a href="#" class="btn">Leia Mais</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact">
+            <h3>Fale Conosco</h3>
+            <form action="#">
+                <input type="text" placeholder="Nome" required>
+                <input type="email" placeholder="Email" required>
+                <input type="text" placeholder="Assunto" required>
+                <textarea placeholder="Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="coverage">
+            <h3>Áreas Cobertas</h3>
+            <p>Como somos uma empresa baseada em São Paulo, SP, nós cobrimos toda a Região Sudeste e entregamos para todo o Brasil</p>
+            <ul>
+                <li>São Paulo</li>
+                <li>Rio de Janeiro</li>
+                <li>Brasília</li>
+                <li>Belo Horizonte</li>
+                <li>Salvador</li>
+                <li>Porto Alegre</li>
+                <li>Curitiba</li>
+                <li>Manaus</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
