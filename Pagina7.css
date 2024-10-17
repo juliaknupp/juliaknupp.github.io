@@ -5,7 +5,7 @@ body {
 }
 
 header {
-    background-image: url('seu-caminho-da-imagem.jpg'); /* Substitua pelo caminho da imagem */
+    background-image: url(IMG_3049.jpeg); /* Substitua pelo caminho da imagem */
     background-size: cover;
     height: 400px;
     display: flex;
