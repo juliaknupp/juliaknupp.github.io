@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugestão - Ajuda</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">SIG</a></li>
+                <li><a href="#">Região</a></li>
+                <li><a href="#">Alertas</a></li>
+                <li><a href="#">Menu</a></li>
+                <li><a href="#">Sugestão e Ajuda</a></li>
+                <li><a href="#">Assistência ao Agricultor</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <img src="landscape-1629977_1920.jpg" alt="Imagem do Cerrado">
+        <div class="hero-text">
+            <h1>Sugestão</h1>
+            <h2>Ajuda</h2>
+        </div>
+    </section>
+    <section class="sugestao-ajuda">
+        <p>Aqui você pode acessar o chat, para fornecer e acessar sugestões e ajudas.</p>
+        <div class="chat-container">
+            <div class="chat-box">
+                <h3>Chat</h3>
+                <div class="mensagem" id="mensagens">
+                    <p>Achei o site bem dinâmico para moradores e pesquisadores</p>
+                </div>
+            </div>
+            <div class="input-box">
+                <textarea id="sugestaoInput" placeholder="Digite aqui sua sugestão!"></textarea>
+                <button onclick="enviarSugestao()">Enviar</button>
+            </div>
+        </div>
+    </section>
+    <section class="imagem-rodape">
+        <img src="hunt-583086_1920.jpg" alt="Imagem do agricultor">
+    </section>
+
+    <!-- Script para funcionalidade -->
+    <script>
+        // Armazena as mensagens
+        let mensagens = [
+            "Achei o site bem dinâmico para moradores e pesquisadores"
+        ];
+
+        // Função para exibir as mensagens no chat
+        function exibirMensagens() {
+            const mensagemDiv = document.getElementById('mensagens');
+            mensagemDiv.innerHTML = '';  // Limpa as mensagens antigas
+            mensagens.forEach(mensagem => {
+                const p = document.createElement('p');
+                p.textContent = mensagem;
+                mensagemDiv.appendChild(p);
+            });
+        }
+
+        // Função para enviar sugestão
+        function enviarSugestao() {
+            const input = document.getElementById('sugestaoInput');
+            const sugestao = input.value;
+
+            if (sugestao.trim() !== '') {
+                mensagens.push(sugestao);  // Adiciona a nova sugestão ao array
+                exibirMensagens();  // Atualiza o chat com a nova mensagem
+                input.value = '';  // Limpa o campo de texto
+            } else {
+                alert('Digite uma sugestão válida!');
+            }
+        }
+
+        // Exibir as mensagens ao carregar a página
+        window.onload = exibirMensagens;
+    </script>
+</body>
+</html>
