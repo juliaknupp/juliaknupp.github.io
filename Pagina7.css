@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('seu-caminho-da-imagem.jpg'); /* Substitua pelo caminho da imagem */
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+#content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-box {
+    width: 30%;
+    background-color: #556b2f;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-box h3 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.right-box {
+    width: 65%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.right-box h2 {
+    color: #d9534f;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.right-box p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
