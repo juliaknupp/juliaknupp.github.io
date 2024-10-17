@@ -6,7 +6,7 @@ body {
 
 /* Estilos gerais */
 .header {
-    background-image: url('https://via.placeholder.com/1200x400'); /* Coloque a URL da imagem de fundo correta */
+    background-image: url("IMG_3048.jpeg"); /* Coloque a URL da imagem de fundo correta */
     background-size: cover;
     color: white;
     text-align: center;
