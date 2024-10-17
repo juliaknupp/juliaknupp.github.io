@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-    background-image: url (IMG_3027.jpeg); /* Substitua pelo link da imagem correta */
+    background-image: url ("IMG_3027.jpeg"); /* Substitua pelo link da imagem correta */
     background-size: cover;
     background-position: center;
     height: 300px;
