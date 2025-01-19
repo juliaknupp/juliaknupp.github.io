@@ -1,0 +1,106 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8;
+}
+
+.header {
+    background-color: #8b0000;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #8b0000;
+    margin-bottom: 20px;
+}
+
+.directors {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.director {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: center;
+}
+
+.director img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.producers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.producers-list {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.producers-list h3 {
+    margin-bottom: 10px;
+    color: #8b0000;
+}
+
+.producers-list ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.producers-list li {
+    margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .directors,
+    .producers {
+        grid-template-columns: 1fr;
+    }
+}
