@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <label>frase </label><textarea id="frase"></textarea> <br>
+    <label>procurar </label><textarea id="procura"></textarea> <br>
+    <label>substituir </label><textarea id="substitui"></textarea> <br>
+    <button id="executa">enviar</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+  const botao = document.querySelector("#executa")
+const getValue = seletorDom => document.querySelector(seletorDom).value
+
+const substitui = () => {
+    let fraseOriginal = getValue("#frase")
+    let procurar = getValue("#procura")
+    let substituir = getValue("#substitui")
+    let obj = document.querySelector("#resultado")
+
+    let fraseAlterada = fraseOriginal.replaceAll(procurar, substituir)
+    obj.innerHTML = fraseAlterada
+}
+
+botao.addEventListener("click", substitui)
+</script>
