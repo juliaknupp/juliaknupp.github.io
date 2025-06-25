@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" id="dat1">
+    <input type="date" id="dat2">
+    <button id="executa">contar</button>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+  const botao = document.querySelector("#executa")
+const getValue = seletorDom => document.querySelector(seletorDom).value
+
+const contaSemanas = (data1, data2) => {
+    let semanasContadas
+    if (data1 > data2) semanasContadas = (data1 - data2) / (1000 * 60 * 60 * 24 * 7)
+    else if (data1 < data2) semanasContadas = (data2 - data1) / (1000 * 60 * 60 * 24 * 7)
+    semanasContadas = Math.floor(semanasContadas)
+    return semanasContadas
+}
+
+const questao10 = () => {
+    let data1 = new Date(getValue("#dat1").split("-"))
+    let data2 = new Date(getValue("#dat2").split("-"))
+    let obj = document.querySelector("#resultado")
+    let diferencaSemanas = contaSemanas(data1, data2)
+
+    obj.innerHTML = `Diferença de semanas: ${diferencaSemanas}`
+}
+
+botao.addEventListener("click", questao10)
+</script>
