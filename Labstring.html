@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links Centralizados</title>
+    <style>
+        body {
+            background-color: #f5f5dc;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 255, 0.2); /* Sombra azul */
+            border: 2px solid #1e90ff; /* Borda azul */
+        }
+        
+        h1 {
+            color: #1e90ff; /* Azul */
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        a {
+            display: inline-block;
+            padding: 12px 20px;
+            background-color: #f0f8ff; /* Azul claro */
+            color: #0066cc; /* Azul mais escuro */
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid #add8e6; /* Borda azul claro */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        a:hover {
+            background-color: #1e90ff; /* Azul */
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 255, 0.2);
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgba(30, 144, 255, 0.1); /* Azul com transparência */
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .decoration:nth-child(1) {
+            top: 10%;
+            left: 10%;
+        }
+        
+        .decoration:nth-child(2) {
+            bottom: 10%;
+            right: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration"></div>
+    <div class="decoration"></div>
+    
+    <div class="container">
+        <h1>Links Úteis</h1>
+        <div class="link-list">
+            <a href="https://juliaknupp.github.io/questão1.html" >Questão 1 </a>
+            <a href="https://juliaknupp.github.io/questão2.html">Questão 2</a>
+            <a href="https://juliaknupp.github.io/questão3.html">Questão 3</a>
+            <a href="https://juliaknupp.github.io/questão4.html">Questão 4</a>
+            <a href="https://juliaknupp.github.io/questão5.html">Questão 5</a>
+            <a href="https://juliaknupp.github.io/questão6.html">Questão 6</a>
+            <a href="https://juliaknupp.github.io/questão7.html">Questão 7</a>
+            <a href="https://juliaknupp.github.io/questão8.html">Questão 8</a>
+            <a href="https://juliaknupp.github.io/questão9.html">Questão 9</a>
+            <a href="https://juliaknupp.github.io/questão10.html">Questão 10</a>
+        </div>
+    </div>
+</body>
+</html>
