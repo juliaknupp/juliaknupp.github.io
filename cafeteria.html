@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cafeteria do CEFET-RJ</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        height: 70px;
+        width: 100%;
+        margin-top: -10px;
+        margin-bottom: 5px;
+        padding-right: 5px;
+        padding-left: 5px;
+        background-color: #6f4e37; /* marrom */
+        color: #f8f5f0; /* off white */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px 0px 10px 10px;
+        position: fixed;
+        z-index: 1;
+      }
+
+      body {
+        background-color: #f8f5f0; /* off white */
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 90px 20px 20px 20px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .menu-area {
+        flex: 3;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .menu-item {
+        border-radius: 15px;
+        border: 1px solid #d2b48c; /* caramelo */
+        padding: 10px;
+        width: 150px;
+        cursor: pointer;
+        text-align: center;
+        background-color: #fffaf3;
+        transition: 0.3s;
+      }
+
+      .menu-item img {
+        border-radius: 15px;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .menu-item:hover {
+        background-color: #f1e0c6; /* caramelo claro */
+      }
+
+      .cart-area {
+        border-radius: 15px;
+        flex: 1;
+        margin-left: 20px;
+        border: 1px solid #d2b48c;
+        padding: 10px;
+        height: fit-content;
+        background-color: #fffaf3;
+      }
+
+      .cart-area h2 {
+        margin-top: 0;
+        color: #6f4e37; /* marrom */
+      }
+
+      .cart-area ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      .cart-area li {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .remove-btn {
+        background-color: #d2b48c; /* caramelo */
+        border: none;
+        padding: 3px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 12px;
+        transition: 0.2s;
+      }
+
+      .remove-btn:hover {
+        background-color: #6f4e37; /* marrom */
+      }
+
+      .cart-total {
+        font-weight: bold;
+        margin-top: 10px;
+        color: #6f4e37;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Cafeteria do CEFET-RJ</h1>
+    </header>
+    <div class="container">
+      <div class="menu-area" id="menu"></div>
+      <div class="cart-area">
+        <h2>Itens Comprados</h2>
+        <ul id="cart-items"></ul>
+        <p class="cart-total">Total: R$ <span id="total">0.00</span></p>
+      </div>
+    </div>
+    <script>
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let total = cart.reduce((sum, item) => sum + item.preco, 0);
+
+      fetch("cardapio.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const menuArea = document.getElementById("menu");
+          data.forEach((item) => {
+            let itemDiv = document.createElement("div");
+            itemDiv.className = "menu-item";
+            itemDiv.innerHTML = `
+              <img src="${item.img}" alt="${item.nome}">
+              <h3>${item.nome}</h3>
+              <p>R$ ${item.preco.toFixed(2)}</p>
+            `;
+
+            itemDiv.addEventListener("click", function () {
+              addToCart(item);
+            });
+            menuArea.appendChild(itemDiv);
+          });
+
+          updateCartDisplay();
+        })
+        .catch((error) => {
+          console.error("Erro ao carregar o cardápio:", error);
+        });
+
+      function addToCart(item) {
+        cart.push(item);
+        total += item.preco;
+        saveCart();
+        updateCartDisplay();
+      }
+
+      function removeFromCart(index) {
+        total -= cart[index].preco;
+        cart.splice(index, 1);
+        saveCart();
+        updateCartDisplay();
+      }
+
+      function updateCartDisplay() {
+        const cartItemsList = document.getElementById("cart-items");
+        const totalElement = document.getElementById("total");
+        cartItemsList.innerHTML = "";
+        cart.forEach((item, index) => {
+          let li = document.createElement("li");
+          li.innerHTML = `
+            ${item.nome} - R$ ${item.preco.toFixed(2)}
+            <button class="remove-btn" onclick="removeFromCart(${index})">Remover</button>
+          `;
+          cartItemsList.appendChild(li);
+        });
+        totalElement.textContent = total.toFixed(2);
+      }
+
+      function saveCart() {
+        localStorage.setItem("cart", JSON.stringify(cart));
+      }
+    </script>
+    <footer></footer>
+  </body>
+</html>
