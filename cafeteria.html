@@ -7,15 +7,13 @@
       * {
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
       }
 
       header {
         height: 70px;
         width: 100%;
-        margin-top: -10px;
-        margin-bottom: 5px;
-        padding-right: 5px;
-        padding-left: 5px;
+        padding: 10px;
         background-color: #6f4e37; /* marrom */
         color: #f8f5f0; /* off white */
         display: flex;
@@ -23,6 +21,7 @@
         justify-content: center;
         border-radius: 0px 0px 10px 10px;
         position: fixed;
+        top: 0;
         z-index: 1;
       }
 
@@ -35,25 +34,30 @@
 
       h1 {
         text-align: center;
+        font-size: 1.5rem;
       }
 
       .container {
         display: flex;
         margin-top: 20px;
+        gap: 20px;
+        flex-wrap: wrap;
       }
 
       .menu-area {
         flex: 3;
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 15px;
+        justify-content: center;
       }
 
       .menu-item {
         border-radius: 15px;
         border: 1px solid #d2b48c; /* caramelo */
         padding: 10px;
-        width: 150px;
+        width: 180px;
+        max-width: 100%;
         cursor: pointer;
         text-align: center;
         background-color: #fffaf3;
@@ -73,9 +77,9 @@
       .cart-area {
         border-radius: 15px;
         flex: 1;
-        margin-left: 20px;
+        min-width: 250px;
         border: 1px solid #d2b48c;
-        padding: 10px;
+        padding: 15px;
         height: fit-content;
         background-color: #fffaf3;
       }
@@ -83,6 +87,7 @@
       .cart-area h2 {
         margin-top: 0;
         color: #6f4e37; /* marrom */
+        font-size: 1.2rem;
       }
 
       .cart-area ul {
@@ -95,6 +100,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-size: 0.9rem;
       }
 
       .remove-btn {
@@ -116,6 +122,38 @@
         font-weight: bold;
         margin-top: 10px;
         color: #6f4e37;
+        font-size: 1rem;
+      }
+
+      /* -------- Responsividade -------- */
+      @media (max-width: 900px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+        .cart-area {
+          width: 100%;
+          margin-top: 20px;
+        }
+        .menu-item {
+          width: 45%;
+        }
+      }
+
+      @media (max-width: 600px) {
+        header {
+          height: auto;
+          padding: 15px;
+        }
+        h1 {
+          font-size: 1.2rem;
+        }
+        .menu-item {
+          width: 100%;
+        }
+        .cart-area {
+          width: 100%;
+        }
       }
     </style>
   </head>
